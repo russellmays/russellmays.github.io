@@ -1,0 +1,22 @@
+body {
+    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+    background-color: #FBFDDA;
+    text-align: center;
+}
+
+.name-container {
+    font-size: 350%;
+    padding-top: 100px;
+}
+
+.link-container {
+    padding-top: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.external-link {
+    height: 50px;
+}
