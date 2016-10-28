@@ -28,7 +28,7 @@ body {
 .bio-container {
     margin-top: 30px;
     width: 425px;
-    padding: 20px;
+    padding: 25px;
     background-color: white;
     border: 2px solid gray;
     border-radius: 10px;
@@ -37,6 +37,16 @@ body {
 
 .bio-initial {
     margin-bottom: 15px;
+}
+
+.bio-work {
+    width: 360px;
+    margin: 0 auto;
+}
+
+.bio-work > a {
+    font-weight: 600;
+    color: darkgreen;
 }
 
 .link-container {
