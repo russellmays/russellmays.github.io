@@ -1,0 +1,37 @@
+.page-container {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+
+.sidebar {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-align-items: center;
+    align-items: center;
+
+    width: 300px;
+}
+
+.resume {
+    width: 800px;
+    height: 1150px;
+    background: white;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.flexbox-spacer {
+    width: 300px;
+}

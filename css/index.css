@@ -1,0 +1,36 @@
+.avatar-lg-container {
+    margin-top: 50px; 
+
+    text-align: center;
+}
+
+.bio {
+    width: 425px;
+    padding: 25px;
+    border-radius: 10px;
+
+    background-color: white;
+    border: 2px solid gray;
+
+    margin: 30px auto 0 auto;
+
+    text-align: center;
+}
+
+.bio-work {
+    width: 360px;
+    margin: 15px auto 0px auto;
+}
+
+.links {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    margin-top: 30px;
+}

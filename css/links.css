@@ -1,0 +1,57 @@
+.link {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    -webkit-align-items: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 25px;
+
+    background-color: white;
+
+    margin: 5px 8px;
+}
+
+.link-resume {
+    width: 100px;
+    border: 2px solid black;
+}
+
+.link-resume-pdf {
+    width: 130px;
+}
+
+.link-github {
+    border: 2px solid white;
+}
+
+.link-github > a {
+    width: 50px;
+    height: 50px;
+}
+
+.img-github {
+    width: 50px;
+    height: 50px;
+}
+
+.link-linkedin {
+    border: 2px solid black;
+}
+
+.img-linkedin {
+    width: 35px;
+    height: 35px;
+
+    margin-top: 3px;
+    margin-left: 2px;
+}
