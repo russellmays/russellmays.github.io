@@ -11,14 +11,14 @@
     -webkit-align-items: center;
     align-items: center;
 
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
 
-    border-radius: 25px;
+    border-radius: 24px;
 
     background-color: white;
 
-    margin: 5px 8px;
+    margin: 6px;
 }
 
 .link-resume {
@@ -26,22 +26,28 @@
     border: 2px solid black;
 }
 
+.link-resume > a {
+    font-size: 1.075em;
+    color: black;
+}
+
 .link-resume-pdf {
     width: 130px;
 }
 
 .link-github {
-    border: 2px solid white;
+    width: 46px;
+    height: 46px;
 }
 
 .link-github > a {
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
 }
 
 .img-github {
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
 }
 
 .link-linkedin {
@@ -49,8 +55,8 @@
 }
 
 .img-linkedin {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
 
     margin-top: 3px;
     margin-left: 2px;
