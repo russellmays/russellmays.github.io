@@ -2,21 +2,18 @@ body {
     font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
 }
 
-/* FIX THIS */
 .bg-img {
-
     position: fixed;
     top: 0;
     left: 0;
 
-    min-width: 1024px;
+    min-width: 1072px;
     width: 100%;
 
     min-height: 100%;
     height: auto;
 
     z-index: -1;
-
 }
 
 .avatar-lg {
