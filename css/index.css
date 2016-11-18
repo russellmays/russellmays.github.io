@@ -17,6 +17,11 @@
     text-align: center;
 }
 
+.bio-intro {
+    width: 360px;
+    margin: 0 auto;
+}
+
 .bio-work {
     width: 360px;
     margin: 15px auto 0px auto;
