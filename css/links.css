@@ -21,6 +21,19 @@
     margin: 6px;
 }
 
+.link-project {
+}
+
+.link-artradr {
+    width: 125px;
+    border: 2px solid gray;
+}
+
+.link-politipong {
+    width: 150px;
+    border: 2px solid gray;
+}
+
 .link-resume {
     width: 100px;
     border: 2px solid black;
