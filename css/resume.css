@@ -2,9 +2,6 @@
     display: -webkit-flex;
     display: flex;
 
-    -webkit-flex-direction: row;
-    flex-direction: row;
-
     -webkit-justify-content: center;
     justify-content: center;
 
@@ -23,6 +20,18 @@
     align-items: center;
 
     min-width: 300px;
+}
+
+.avatar-sm-container {
+    margin-top: 100px;
+    margin-bottom: 15px;
+}
+
+.avatar-sm-container > img {
+    width: 150px;
+    height: 150px;
+    border: 2px solid white;
+    border-radius: 50%;
 }
 
 .resume {

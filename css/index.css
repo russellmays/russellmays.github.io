@@ -1,11 +1,36 @@
-.page-container {
-    min-width: 550px;
+.top-container {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    min-width: 578px;
+}
+
+.flexbox-spacer {
+    width: 135px
 }
 
 .avatar-lg-container {
     margin-top: 50px; 
+}
 
-    text-align: center;
+.avatar-lg-container > img {
+    width: 300px;
+    height: 300px;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+.link-container-social {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    margin-top: 200px;
 }
 
 .bio {
@@ -31,18 +56,17 @@
     margin: 15px auto 0px auto;
 }
 
-.links {
+.bio-work > a {
+    font-weight: 600;
+    color: darkgreen;
+}
+
+.link-container-project {
     display: -webkit-flex;
     display: flex;
-
-    -webkit-flex-direction: row;
-    flex-direction: row;
 
     -webkit-justify-content: center;
     justify-content: center;
 
-    -webkit-align-items: center;
-    align-items: center;
-
-    margin-top: 30px;
+    margin-top: 25px;
 }

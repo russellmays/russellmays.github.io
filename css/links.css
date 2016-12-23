@@ -2,75 +2,58 @@
     display: -webkit-flex;
     display: flex;
 
-    -webkit-flex-direction: row;
-    flex-direction: row;
-
     -webkit-justify-content: center;
     justify-content: center;
 
     -webkit-align-items: center;
     align-items: center;
 
-    width: 44px;
-    height: 44px;
-
-    border-radius: 24px;
-
+    height: 35px;
+    width: 35px;
+    border: 2px solid black;
+    border-radius: 20px;
     background-color: white;
-
     margin: 6px;
 }
 
+.link-resume-social {
+    width: 110px;
+    margin-left: 15px;
+}
+
+.link-resume-pdf {
+    width: 145px;
+}
+
+.link-linkedin > img {
+    height: 20px;
+    width: 20px;
+    margin-left: 1px;
+    margin-bottom: 2px;
+}
+
+.link-linkedin-social {
+    margin-left: -2px;
+}
+
+.link-github {
+    border: none;
+}
+
+.link-github > img {
+    height: 37px;
+    width: 37px;
+}
+
+.link-github-social {
+    margin-left: -27px;
+}
+
 .link-project {
-}
-
-.link-artradr {
-    width: 125px;
-    border: 2px solid gray;
-}
-
-.link-politipong {
     width: 150px;
     border: 2px solid gray;
 }
 
-.link-resume {
-    width: 100px;
-    border: 2px solid black;
-}
-
-.link-resume > a {
-    font-size: 1.075em;
-    color: black;
-}
-
-.link-resume-pdf {
-    width: 130px;
-}
-
-.link-github {
-    width: 46px;
-    height: 46px;
-}
-
-.link-github > a {
-    width: 46px;
-    height: 46px;
-}
-
-.img-github {
-    width: 46px;
-    height: 46px;
-}
-
-.link-linkedin {
-    border: 2px solid black;
-}
-
-.img-linkedin {
-    width: 30px;
-    height: 30px;
-
-    margin-top: 3px;
-    margin-left: 2px;
+.link-artradr > img {
+    margin-left: 6px;
 }
