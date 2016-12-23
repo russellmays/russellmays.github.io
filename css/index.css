@@ -1,11 +1,13 @@
+body {
+    min-width: 578px;
+}
+
 .top-container {
     display: -webkit-flex;
     display: flex;
 
     -webkit-justify-content: center;
     justify-content: center;
-
-    min-width: 578px;
 }
 
 .flexbox-spacer {
