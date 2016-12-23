@@ -48,6 +48,7 @@
 
 .link-github {
     border: none;
+    border-radius:50%;
 }
 
 .link-github > img {
