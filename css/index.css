@@ -1,5 +1,5 @@
 body {
-    min-width: 578px;
+    min-width: 610px;
 }
 
 .top-container {
@@ -11,7 +11,7 @@ body {
 }
 
 .flexbox-spacer {
-    width: 135px
+    width: 151px
 }
 
 .avatar-lg-container {
