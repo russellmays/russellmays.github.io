@@ -8,63 +8,37 @@
     -webkit-align-items: center;
     align-items: center;
 
-    height: 35px;
-    width: 35px;
     border: 2px solid gray;
     border-radius: 20px;
     background-color: white;
     margin: 7px;
 }
 
-.link-resume-social {
-    width: 125px;
+.link-social {
+    height: 30px;
+    width: 110px;
+    font-size: 0.8em;
+}
+
+.link-social-resume {
     margin-left: 15px;
 }
 
-.link-resume-pdf {
-    width: 150px;
+.link-social-wider {
+    width: 120px;
 }
 
-.link-linkedin {
-    width: 45px;
-    border: none;
-    border-radius: 0;
-    background-color: transparent;
+.link-social-linkedin {
+    margin-left: 0px;
 }
 
-.link-linkedin > img {
-    height: 35px;
-    width: 45px;
-}
-
-.link-linkedin-social {
-    margin-top: 12px;
-    margin-left: 10px;
-}
-
-.link-linkedin-resume {
-    padding-left: 10px;
-}
-
-.link-github {
-    border: none;
-    height: 37px;
-    width: 37px;
-    border-radius:50%;
-}
-
-.link-github > img {
-    height: 37px;
-    width: 37px;
-}
-
-.link-github-social {
-    margin-left: -27px;
+.link-social-github {
+    margin-left: -25px;
 }
 
 .link-project {
+    height: 35px;
     width: 150px;
-    border: 2px solid gray;
 }
 
 .link-artradr > img {

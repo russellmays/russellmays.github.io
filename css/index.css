@@ -1,5 +1,5 @@
 body {
-    min-width: 610px;
+    min-width: 580px;
 }
 
 .top-container {
@@ -11,7 +11,7 @@ body {
 }
 
 .flexbox-spacer {
-    width: 151px
+    width: 136px
 }
 
 .avatar-lg-container {
@@ -25,7 +25,7 @@ body {
     border-radius: 50%;
 }
 
-.link-container-social {
+.link-social-container {
     display: -webkit-flex;
     display: flex;
 
@@ -63,7 +63,7 @@ body {
     color: darkgreen;
 }
 
-.link-container-project {
+.link-project-container {
     display: -webkit-flex;
     display: flex;
 
