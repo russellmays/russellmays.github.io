@@ -5,7 +5,7 @@
     -webkit-justify-content: center;
     justify-content: center;
 
-    min-width: 1475px;
+    min-width: 1175px;
 }
 
 
@@ -35,8 +35,9 @@
 }
 
 .resume {
-    width: 1100px;
-    height: 1450px;
+    width: 800px;
+    /*height: 1050px;*/
+    height: 1125px;
     background: white;
 
     margin-top: 50px;
