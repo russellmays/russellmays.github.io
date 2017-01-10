@@ -26,34 +26,48 @@ a {
 .avatar-container {
     position: absolute;
     top: 190px;
-    left: 50%;
-    margin-left: -450px;
+    left: 450px;
+    margin-left: -396px;
+}
+
+@media (min-width: 900px) {
+    .avatar-container {
+        left: 50%;
+        margin-left: -404px;
+    }
 }
 
 .avatar-container > img {
     width: 200px;
     height: 200px;
-    border: 3px solid white;
+    border: 3px solid #f1f1f1;
     border-radius: 50%;
 }
 
-.bio {
-    width: 600px;
+.about {
+    width: 500px;
     margin: 300px auto 0 auto;
-    padding: 50px;
+    padding: 40px 50px 20px 50px;
 
     border-radius: 15px;
-    background-color: white;
-    border: 2px solid gray;
+    background-color: #f1f1f1;
 
     text-align: center;
 }
 
-.bio-section {
-    width: 450px;
+.about-section {
+    width: 400px;
     margin: 0 auto 25px auto;
 }
 
-.bio-section-final {
-    margin-bottom: 0;
+.about-divider {
+    margin-left: -50px;
+    margin-right: -50px;
+    color: gray;
+}
+
+.about-footer {
+    margin: 20px auto 0 auto;
+    padding-left: 10px;
+    font-size: 0.8em;
 }
