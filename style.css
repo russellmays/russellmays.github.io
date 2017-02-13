@@ -1,6 +1,8 @@
 body {
+    margin:0;
+    background-color: #002366;
     font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
-    min-width: 900px;
+    text-align: center;
 }
 
 a {
@@ -9,65 +11,94 @@ a {
     text-decoration: none;
 }
 
-.bg-img {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    min-width: 1286px;
-    width: 100%;
-
-    min-height: 100%;
-    height: auto;
-
+.color-container {
+    position: absolute;
+    height: 100vh;
+    width: 5%;
     z-index: -1;
 }
 
-.avatar-container {
-    position: absolute;
-    top: 190px;
-    left: 450px;
-    margin-left: -396px;
+.orange {
+    right: 5%;
+    background-color: #ff7900;
 }
 
-@media (min-width: 900px) {
-    .avatar-container {
-        left: 50%;
-        margin-left: -404px;
-    }
+.purple {
+    right: 0;
+    background-color: #8a2be2;
+}
+
+.avatar-container {
+    padding-top: 35px;
 }
 
 .avatar-container > img {
-    width: 200px;
-    height: 200px;
-    border: 3px solid #f1f1f1;
+    border: 3px solid white;
     border-radius: 50%;
 }
 
 .about {
-    width: 500px;
-    margin: 300px auto 0 auto;
-    padding: 40px 50px 20px 50px;
-
-    border-radius: 15px;
-    background-color: #f1f1f1;
-
-    text-align: center;
+    background-color: white;
+    margin-top: 20px;
+    padding: 30px 20px 15px 20px;
 }
 
 .about-section {
-    width: 400px;
     margin: 0 auto 25px auto;
 }
 
 .about-divider {
-    margin-left: -50px;
-    margin-right: -50px;
     color: gray;
+    margin-left: -20px;
+    margin-right: -20px;
 }
 
 .about-footer {
     margin: 20px auto 0 auto;
-    padding-left: 10px;
+    padding-left: 20px;
     font-size: 0.8em;
+}
+
+@media (min-width: 500px) {
+    body {
+        background: #000 url("images/planks-scaled.jpg") fixed center center no-repeat;
+        background-size: cover;
+    }
+
+    .color-container {
+        display: none;
+    }
+
+    .avatar-container {
+        padding-top: 45px;
+    }
+
+    .about {
+        width: 400px;
+        margin: 30px auto;
+
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 900px) {
+
+    .avatar-container {
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        margin-top: 0;
+        margin-left: -404px;
+    }
+
+    .about {
+        width: 560px;
+        margin: 300px auto 0 auto;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    .about-section {
+        width: 420px;
+    }
 }
