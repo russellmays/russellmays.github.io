@@ -1,11 +1,14 @@
 (ns russellmays-com.web
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]
+  (:require [clojure.string :as str]
             [hiccup.page :refer [html5]]
             [me.raynes.cegdown :as md]
+            [optimus.assets :as assets]
+            [optimus.optimizations :as optimizations]
+            [optimus.prime :as optimus]
+            [optimus.strategies :refer [serve-live-assets]]
             [stasis.core :as stasis]))
 
-(defn layout-page
+(defn ^:private layout-page
   ""
   [page]
   (html5
@@ -19,24 +22,44 @@
     [:div.logo "russellmays.com"]
     [:div.body page]]))
 
-(defn partial-pages
+(defn ^:private partial-pages
   ""
   [pages]
   (zipmap (keys pages)
           (map layout-page (vals pages))))
 
-(defn markdown-pages
+(defn ^:private markdown-pages
   ""
   [pages]
   (zipmap (map #(str/replace % #"\.md$" "/") (keys pages))
           (map #(layout-page (md/to-html %)) (vals pages))))
 
-(defn get-pages
+(defn ^:private get-pages
   ""
   []
   (stasis/merge-page-sources
-   {:public   (stasis/slurp-directory "resources/public" #".*\.(html|css|js)$")
+   {:public   (stasis/slurp-directory "resources/public" #".*\.html$")
     :partials (partial-pages (stasis/slurp-directory "resources/partials" #".*\.html$"))
     :markdown (markdown-pages (stasis/slurp-directory "resources/md" #"\.md$"))}))
 
-(def app (stasis/serve-pages get-pages))
+(defn ^:private wrap-pages
+  ""
+  []
+  (let [pages (get-pages)]
+    (zipmap (keys pages)
+            (map #(fn [req] %) (vals pages)))))
+
+(defn ^:private get-assets
+  ""
+  []
+  (concat
+   (assets/load-assets "public" ["/style.css"])
+   (assets/load-assets "images" ["/russellmays.png"
+                                 "/avatar-scaled.png"])))
+
+(def app
+  ""
+  (optimus/wrap (stasis/serve-pages wrap-pages)
+                get-assets
+                optimizations/all
+                serve-live-assets))

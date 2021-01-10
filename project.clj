@@ -7,6 +7,7 @@
                  [stasis "2.5.0"]
                  [ring "1.8.2"]
                  [hiccup "1.0.5"]
-                 [me.raynes/cegdown "0.1.1"]]
+                 [me.raynes/cegdown "0.1.1"]
+                 [optimus "0.20.2"]]
   :ring {:handler russellmays-com.web/app}
   :profiles {:dev {:plugins [[lein-ring "0.12.5"]]}})
