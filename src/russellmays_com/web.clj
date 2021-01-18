@@ -3,6 +3,7 @@
             [hiccup.page :refer [html5]]
             [me.raynes.cegdown :as md]
             [optimus.assets :as assets]
+            [optimus.export :as o.export]
             [optimus.optimizations :as optimizations]
             [optimus.prime :as optimus]
             [optimus.strategies :refer [serve-live-assets]]
@@ -43,14 +44,13 @@
     :markdown (markdown-pages (stasis/slurp-directory "resources/md" #"\.md$"))}))
 
 (defn ^:private wrap-pages
-  ""
-  []
-  (let [pages (get-pages)]
-    (zipmap (keys pages)
-            (map #(fn [req] %) (vals pages)))))
+  "Lazy page loading with page request fn shim."
+  [pages]
+  (zipmap (keys pages)
+          (map #(fn [req] (% req)) (vals pages))))
 
 (defn ^:private get-assets
-  ""
+  "Pulls in assets."
   []
   (concat
    (assets/load-assets "public" ["/style.css"])
@@ -58,8 +58,20 @@
                                  "/avatar-scaled.png"])))
 
 (def app
-  ""
-  (optimus/wrap (stasis/serve-pages wrap-pages)
+  "Orchestrates pages and assets for local development."
+  (optimus/wrap (-> (get-pages)
+                    wrap-pages
+                    stasis/serve-pages)
                 get-assets
                 optimizations/all
                 serve-live-assets))
+
+(defn export
+  "Builds pages and assets for production deployment."
+  []
+  (let [export-dir "dist"
+        assets     (optimizations/all (get-assets) {})
+        assets     (remove #(:outdated %) assets)]
+    (stasis/empty-directory! export-dir)
+    (o.export/save-assets assets export-dir)
+    (stasis/export-pages (get-pages) export-dir {:optimus-assets assets})))
