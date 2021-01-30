@@ -22,7 +22,7 @@
     [:link {:rel  "shortcut icon"
             :type "image/png"
             :href (link/file-path request "/russellmays.png")}]
-    [:link {:rel "stylesheet"
+    [:link {:rel  "stylesheet"
             :type "text/css"
             :href (link/file-path request "/style.css")}]]
    [:body
@@ -44,35 +44,35 @@
                 ["or check out my"
                  (html5 [:a {:href "https://github.com/russellmays"} "GitHub Profile."])])]]]))
 
-(defn ^:private song-of-the-month-page
-  "russellmays.com/song-of-the-month/"
+(defn ^:private blog-page
+  "russellmays.com/blog/"
   [request]
-  "Song of the Month")
+  "Blog")
 
-(defn ^:private song-page
-  "russellmays.com/song-of-the-month/<page>/"
+(defn ^:private blog-post-page
+  "russellmays.com/blog/<page>/"
   [page]
   page)
 
-(defn ^:private song-pages
-  "Processes individual song pages."
+(defn ^:private blog-post-pages
+  "Processes each blog post."
   [pages]
   (zipmap (->> (keys pages)
                (map #(str/replace % #"\.md$" "/"))
-               (map #(str "/song-of-the-month" %)))
+               (map #(str "/blog" %)))
           (->> (vals pages)
                (map #(md/to-html %))
-               (map #(song-page %)))))
+               (map #(blog-post-page %)))))
 
 (defn ^:private get-pages
   "Returns all site pages."
   []
   (stasis/merge-page-sources
-   {:index             {"/index.html" index-page}
-    :song-of-the-month {"/song-of-the-month/index.html" song-of-the-month-page}
-    :songs             (song-pages
-                        (stasis/slurp-directory "resources/blog/song-of-the-month"
-                                                #"\.md$"))}))
+   {:index      {"/index.html" index-page}
+    :blog       {"/blog/index.html" blog-page}
+    :blog-posts (blog-post-pages
+                 (stasis/slurp-directory "resources/blog/data-engineering"
+                                         #"\.md$"))}))
 
 (defn ^:private wrap-page
   "Handles string or fn pages."
