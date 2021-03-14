@@ -34,6 +34,7 @@
                 ["I'm a software engineer at"
                  (html5 [:a {:href "https://highspot.com"} "Highspot"])
                  "where we're empowering revenue teams with better content and better customer conversations."])]
+     [:a {:href "go"} "Here's my blog about Go."]
      [:hr.about-divider]
      [:div.about-footer
       (str/join " "
@@ -44,35 +45,59 @@
                 ["or check out my"
                  (html5 [:a {:href "https://github.com/russellmays"} "GitHub Profile."])])]]]))
 
-(defn ^:private blog-page
-  "russellmays.com/blog/"
+(defn ^:private go-page
+  "russellmays.com/go/"
   [request]
-  "Blog")
+  (html5
+   [:head
+    [:title "Russell Mays"]
+    [:meta {:charset "utf-8"}]
+    [:meta {:name    "viewport"
+            :content "width=device-width, initial-scale=1.0"}]
+    [:link {:rel  "shortcut icon"
+            :type "image/png"
+            :href (link/file-path request "/russellmays.png")}]]
+   [:body
+    "Go"
+    [:a {:href "posts"} "Go Archive"]
+    [:a {:href "resources"} "Go Resources"]]))
 
-(defn ^:private blog-post-page
-  "russellmays.com/blog/<page>/"
+(defn ^:private go-post-page
+  "russellmays.com/go/posts/<post>/"
   [page]
   page)
 
-(defn ^:private blog-post-pages
-  "Processes each blog post."
+(defn ^:private go-post-pages
+  "Processes each Go post."
   [pages]
   (zipmap (->> (keys pages)
                (map #(str/replace % #"\.md$" "/"))
-               (map #(str "/blog" %)))
+               (map #(str "/go/posts" %)))
           (->> (vals pages)
                (map #(md/to-html %))
-               (map #(blog-post-page %)))))
+               (map #(go-post-page %)))))
+
+(defn ^:private go-posts-page
+  "russellmays.com/go/posts/"
+  [request]
+  "Go Archive")
+
+(defn ^:private go-resources-page
+  "russellmays.com/go/resources/"
+  [request]
+  "Go Resources")
 
 (defn ^:private get-pages
   "Returns all site pages."
   []
   (stasis/merge-page-sources
-   {:index      {"/index.html" index-page}
-    :blog       {"/blog/index.html" blog-page}
-    :blog-posts (blog-post-pages
-                 (stasis/slurp-directory "resources/blog/data-engineering"
-                                         #"\.md$"))}))
+   {:index    {"/index.html" index-page}
+    :go       {"/go/index.html"           go-page
+               "/go/posts/index.html"     go-posts-page
+               "/go/resources/index.html" go-resources-page}
+    :go-posts (go-post-pages
+               (stasis/slurp-directory "resources/go/posts"
+                                       #"\.md$"))}))
 
 (defn ^:private wrap-page
   "Handles string or fn pages."
