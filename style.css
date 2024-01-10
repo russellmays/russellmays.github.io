@@ -23,58 +23,20 @@ a {
 
 .about {
     background-color: white;
-    margin-top: 20px;
+    margin-top: -25px;
     padding: 30px 20px 15px 20px;
 }
 
 .about-section {
-    margin: 0 auto 25px auto;
-}
-
-.about-divider {
-    color: gray;
-    margin-left: -20px;
-    margin-right: -20px;
-}
-
-.about-footer {
-    margin: 20px auto 0 auto;
-    padding-left: 20px;
-    font-size: 0.8em;
+    margin: 5px auto 15px auto;
 }
 
 @media (min-width: 500px) {
-
-    .avatar-container {
-        padding-top: 45px;
-    }
-
     .about {
         width: 400px;
-        margin: 30px auto;
+        margin-left: auto;
+        margin-right: auto;
 
         border-radius: 10px;
-    }
-}
-
-@media (min-width: 900px) {
-
-    .avatar-container {
-        position: absolute;
-        top: 150px;
-        left: 50%;
-        margin-top: 0;
-        margin-left: -404px;
-    }
-
-    .about {
-        width: 560px;
-        margin: 300px auto 0 auto;
-        padding-top: 40px;
-        padding-bottom: 20px;
-    }
-
-    .about-section {
-        width: 420px;
     }
 }
