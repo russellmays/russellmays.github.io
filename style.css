@@ -29,6 +29,7 @@ a {
 
 .about-section {
     margin: 5px auto 15px auto;
+    line-height: 120%;
 }
 
 @media (min-width: 500px) {
